@@ -19,4 +19,17 @@ public class ClienteController {
         model.addAttribute("clientes", clienteDao.findAll());
         return "listar";
     }
+
+    @RequestMapping(value="/form")
+    public String crear(Model model){
+	Cliente cliente = new Cliente();
+	model.addAtribute("cliente", cliente);
+	model.addAtribute("titulo", "Formulario de cliente");
+	return "form";
+    }
+
+    @RequestMapping(value="/form", method=RequestMethod.POST)
+    public void guardar(Cliente cliente){
+	    clienteDao.save(cliente);
+	    return "redirect:listar";
 }
