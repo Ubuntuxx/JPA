@@ -3,6 +3,7 @@ package com.example.springboot.app.models.dao;
 import com.example.springboot.app.models.entity.Cliente;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
